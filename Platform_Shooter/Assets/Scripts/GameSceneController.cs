@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSceneController : MonoBehaviour
 {
@@ -20,7 +21,12 @@ public class GameSceneController : MonoBehaviour
         if(player)
         {
             gameCam.transform.position = new Vector3(Mathf.Lerp(gameCam.transform.position.x, player.transform.position.x, 0.5f), player.transform.position.y, gameCam.transform.position.z);
-
+ 
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
