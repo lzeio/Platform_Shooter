@@ -45,4 +45,12 @@ public class PlayerController : MonoBehaviour
         bool isgrounded = Physics.CheckSphere(transform.position, 0.5f, groundMask);
         return isgrounded;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Obstacle")
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
 }
