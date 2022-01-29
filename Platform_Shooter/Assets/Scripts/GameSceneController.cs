@@ -17,6 +17,6 @@ public class GameSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameCam.transform.position = player.transform.position(player.transform.position.x, player.transform.position.y, gameCam.transform.position.z);
+        gameCam.transform.position = new Vector3 (Mathf.Lerp(gameCam.transform.position.x, player.transform.position.x,0.1f), player.transform.position.y, gameCam.transform.position.z);
     }
 }
