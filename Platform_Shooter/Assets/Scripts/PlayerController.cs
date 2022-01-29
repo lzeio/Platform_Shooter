@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -50,7 +49,7 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpForce, 0));
         }
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetMouseButton(0)
         {
             GameObject bulletObject = GameObject.Instantiate<GameObject>(bulletPrefab);
             bulletObject.transform.position = new Vector3(this.transform.position.x + direction, this.transform.position.y, this.transform.position.z);
