@@ -7,7 +7,7 @@ public class GameSceneController : MonoBehaviour
     [SerializeField]
     PlayerController player;
     [SerializeField]
-    Camera Cam;
+    Camera gameCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +17,6 @@ public class GameSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameCam.transform.position = player.transform.position(player.transform.position.x, player.transform.position.y, gameCam.transform.position.z);
     }
 }
