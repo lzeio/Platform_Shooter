@@ -20,7 +20,7 @@ public class GameSceneController : MonoBehaviour
     {
         if(player)
         {
-            gameCam.transform.position = new Vector3(Mathf.Lerp(gameCam.transform.position.x, player.transform.position.x, 0.5f), player.transform.position.y, gameCam.transform.position.z);
+            gameCam.transform.position = new Vector3(Mathf.Lerp(gameCam.transform.position.x, player.transform.position.x, 0.5f), player.transform.position.y,Mathf.Lerp(gameCam.transform.position.z, player.transform.position.z - 10,.1f));
  
         }
         if(Input.GetKeyDown(KeyCode.R))

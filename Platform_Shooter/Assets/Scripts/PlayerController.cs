@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     Text gameTask;
+
+    bool hasSwitchedLayers;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,12 @@ public class PlayerController : MonoBehaviour
 
             BulletController bullet = bulletObject.GetComponent<BulletController>();
             bullet.direction = direction;   
+        }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            hasSwitchedLayers = !hasSwitchedLayers;
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, hasSwitchedLayers?10:0);
         }
     }
 
